@@ -1,0 +1,30 @@
+.header {
+  background-image: url("./images/default.webp");
+  /* height: 100vh;
+  height: 60%; */
+}
+svg {
+  width: 19%;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.headerCart {
+  background-color: white;
+}
+.search {
+  width: 95%;
+  height: 13%;
+  color: white;
+  background-color: rgb(0, 60, 113);
+}
+.headline {
+  /* margin: 10%; */
+}
+.prop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

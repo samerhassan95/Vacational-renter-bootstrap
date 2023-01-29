@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Vacation Rentals | VacationRenter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="">
+    <header class="mb-5" style="height: 90vh">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    User
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Sign in</a></li>
+                    <li><a class="dropdown-item" href="#">Register</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Welcome</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      <div class="header position-relative w-100" style="height: 90%">
+        <div class="pt-4 ps-5 p-5">
+          <svg class="ps-5 h-25 xs:text-blue text-white" viewBox="0 0 757 90" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#logo_svg__a)" fill="currentColor">
+              <path
+                d="m105.389 13.27 17.86 50.35 18.07-50.35h13.81l-25.46 70.88h-13.03l-25.17-70.88h13.92ZM200.481 31.74v52.44h-13.18v-5.56a25.259 25.259 0 0 1-7.7 5.23 22.001 22.001 0 0 1-8.49 1.68 23.513 23.513 0 0 1-17.57-7.9c-4.94-5.23-7.4-11.84-7.4-19.64 0-8.1 2.37-14.71 7.2-19.84a22.555 22.555 0 0 1 17.38-7.79c3.053-.01 6.076.61 8.88 1.82a24.569 24.569 0 0 1 7.7 5.33v-5.77h13.18Zm-37.12 15.1c-2.76 2.86-4.05 6.51-4.05 11a15.48 15.48 0 0 0 4.15 11.16 13.09 13.09 0 0 0 10.02 4.48 13.845 13.845 0 0 0 10.36-4.3c2.67-2.86 4-6.62 4-11.36a15.526 15.526 0 0 0-4-11 13.79 13.79 0 0 0-10.36-4.33 13.302 13.302 0 0 0-10.17 4.35M247.891 48.32a17.834 17.834 0 0 0-6.12-4.44 17.508 17.508 0 0 0-7.1-1.29c-4.94 0-8.89 1.49-11.95 4.44a15.355 15.355 0 0 0-4.54 11.26 14.432 14.432 0 0 0 4.44 11c2.87 2.86 6.72 4.25 11.45 4.25 5.93 0 10.47-2 13.82-6l10.37 7.11c-5.63 7.3-13.62 11-23.89 11-9.18 0-16.38-2.77-21.62-8.2a27.851 27.851 0 0 1-4.05-33.26 27.536 27.536 0 0 1 10.67-10.07 31.15 31.15 0 0 1 15.2-3.65 30.82 30.82 0 0 1 14 3.15 25.885 25.885 0 0 1 10.17 8.78l-10.85 5.92ZM313.29 31.74v52.44h-13.13v-5.56a25.115 25.115 0 0 1-7.7 5.23 22 22 0 0 1-8.49 1.68c-6.71 0-12.63-2.67-17.57-7.9-4.94-5.23-7.4-11.84-7.4-19.64 0-8.1 2.37-14.71 7.2-19.84a22.57 22.57 0 0 1 17.38-7.79c3.06-.014 6.091.606 8.9 1.82a24.559 24.559 0 0 1 7.7 5.33v-5.77h13.11Zm-38.11 15.1c-2.77 2.86-4.05 6.51-4.05 11-.08 2.041.244 4.078.954 5.994A15.493 15.493 0 0 0 275.27 69a13.104 13.104 0 0 0 10.07 4.43 13.88 13.88 0 0 0 10.37-4.25c2.66-2.86 4-6.62 4-11.36a15.561 15.561 0 0 0-4-11 13.823 13.823 0 0 0-10.37-4.25 13.28 13.28 0 0 0-10.16 4.35M320.77 59.93V12.39h13.13v19.34h7.8v11.26h-7.8v16.94s-1.77 11 9 11v13.16s-22.15 1.68-22.15-24.17M362.148 12.58a8.356 8.356 0 0 1 2.47 6.12 8.298 8.298 0 0 1-10.019 8.317 8.304 8.304 0 0 1-4.291-2.397 8.303 8.303 0 0 1-2.47-6.11 8.072 8.072 0 0 1 2.47-5.93 7.774 7.774 0 0 1 5.92-2.46 8.08 8.08 0 0 1 5.92 2.46Zm.69 71.57h-13.22V31.73h13.22v52.42ZM409.75 34.1a27.169 27.169 0 0 1 10.26 10.08 27.584 27.584 0 0 1-.1 27.63 27.2 27.2 0 0 1-10.07 10.08 27.896 27.896 0 0 1-14 3.65 25.995 25.995 0 0 1-19.26-8.1A26.433 26.433 0 0 1 368.69 58a26.655 26.655 0 0 1 9-20.53 26.343 26.343 0 0 1 18.16-7.1c4.886 0 9.684 1.29 13.91 3.74l-.01-.01Zm-23.89 12.93a14.906 14.906 0 0 0-4.14 10.86 15.684 15.684 0 0 0 4 11.16 13.759 13.759 0 0 0 10.17 4.24 13.558 13.558 0 0 0 10.27-4.34 15.208 15.208 0 0 0 4.14-11.06 15.475 15.475 0 0 0-4.05-11 13.665 13.665 0 0 0-10.26-4.14 13.358 13.358 0 0 0-10.17 4.24M441.661 31.73v5.33a33.115 33.115 0 0 1 8.09-5.22 19.853 19.853 0 0 1 7.5-1.48 17.884 17.884 0 0 1 13.23 5.42c3.06 3.06 4.63 7.7 4.63 13.72v34.68h-13v-23c0-6.22-.3-10.46-.89-12.44a8.388 8.388 0 0 0-3-4.74 8 8 0 0 0-5.13-1.57 9.91 9.91 0 0 0-6.91 2.66 14.88 14.88 0 0 0-4 7.41c-.39 1.57-.58 5.13-.58 10.65v21h-13.07V31.73h13.13ZM643.399 59.93V12.39h13.14v19.34h7.79v11.26h-7.79v16.94s-1.77 11 9 11v13.16s-22.16 1.68-22.16-24.17M499.48 13.27c7.9 0 13.43.69 16.78 2.08a16.603 16.603 0 0 1 8 7 20.407 20.407 0 0 1 3.07 11.44 19.566 19.566 0 0 1-3.36 11.75c-2.17 3.06-5.62 5.43-10.07 7.11l16.79 31.53h-14.8l-15.89-30h-1.28v30h-13.54V13.27h14.3Zm3.45 27.74c4.35 0 7.32-.59 8.89-1.77 1.57-1.18 2.47-3 2.47-5.53a7.072 7.072 0 0 0-1.18-4.05 7.22 7.22 0 0 0-3.24-2.48c-1.38-.5-3.85-.7-7.4-.7h-3.75v14.53h4.21ZM542.191 61.74a14.234 14.234 0 0 0 4.94 8.88 15.501 15.501 0 0 0 10.15 3.27 17.411 17.411 0 0 0 12.65-5.14l11 5.23a25.623 25.623 0 0 1-9.87 8.68 30.998 30.998 0 0 1-13.72 2.87c-8.3 0-14.91-2.67-20.14-7.8a26.896 26.896 0 0 1-7.72-19.55 27.646 27.646 0 0 1 7.8-19.93 26.145 26.145 0 0 1 19.35-7.89c8.29 0 15 2.66 20.13 7.89 5.13 5.23 8 12.34 7.8 21v2.46l-42.37.03Zm24-17.47a14.64 14.64 0 0 0-8.9-2.76 15.69 15.69 0 0 0-9.67 3.06 17.794 17.794 0 0 0-4.83 6.81h28.52a12.85 12.85 0 0 0-5.12-7.11M603.3 31.73v5.33a33.096 33.096 0 0 1 8.09-5.22 19.851 19.851 0 0 1 7.5-1.48 17.86 17.86 0 0 1 13.22 5.42c3.06 3.06 4.64 7.7 4.64 13.72v34.68h-13v-23c0-6.22-.29-10.46-.88-12.44a8.346 8.346 0 0 0-3-4.74 7.998 7.998 0 0 0-5.13-1.57 9.999 9.999 0 0 0-6.91 2.66 14.79 14.79 0 0 0-4 7.41c-.39 1.57-.58 5.13-.58 10.65v21h-13.09V31.73h13.14ZM681.309 61.74a14.278 14.278 0 0 0 4.94 8.88 15.517 15.517 0 0 0 10.17 3.27 17.38 17.38 0 0 0 12.63-5.14l11.06 5.23a25.511 25.511 0 0 1-9.88 8.68 31.002 31.002 0 0 1-13.75 2.87c-8.3 0-14.91-2.67-20.14-7.8a26.885 26.885 0 0 1-7.76-19.55 27.645 27.645 0 0 1 7.8-19.93 26.117 26.117 0 0 1 19.35-7.89c8.29 0 15 2.66 20.14 7.89 5.14 5.23 8 12.34 7.79 21v2.46l-42.35.03Zm24-17.47a14.582 14.582 0 0 0-8.88-2.76 15.63 15.63 0 0 0-9.67 3.06 17.794 17.794 0 0 0-4.85 6.81h28.57a12.826 12.826 0 0 0-5.13-7.11M740.07 31.73v6.61a13.533 13.533 0 0 1 4.94-5.92 11.39 11.39 0 0 1 6.61-2.06c1.855.063 3.674.53 5.33 1.37l-4.05 11.26a10.303 10.303 0 0 0-3.85-1.09c-2 0-3.75 1.18-5.13 3.75-1.38 2.57-2.17 7.41-2.08 14.71v23.82h-13V31.73h11.23ZM42.84 25.75l8.64 7.36v-5.15h18.56v21l16.08 13.13a44.82 44.82 0 1 0-83-1l39.72-35.34Z">
+              </path>
+              <path d="M63.63 52.01V34.38h-5.77v12.65L42.92 34.26 5.98 67.09a44.71 44.71 0 0 0 77.13.84L63.63 52.01Z">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="logo_svg__a">
+                <path fill="currentColor" d="M0 0h756.94v89.6H0z"></path>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="position-absolute top-25 start-25  ps-5 mt-5">
+          <div class="headerCart  ms-5">
+            <h2 class="mt-3 ms-3" style="font-weight: bolder; font-size: 2em">
+              Find the perfect vacation rental
+            </h2>
+            <p class="ms-3" style="font-size: 1.1em">
+              We search millions of properties and showcase the best stays.
+            </p>
+            <button class="ms-3 me-5 border rounded bg-white" style="width: 95%" type="submit">
+              Destination
+              <p>Where to?</p>
+            </button>
+
+            <div class="ms-3 mt-2 row rounded" style="width: 95%; border-radius: 30%">
+              <button class="col-6 border bg-white" type="submit">
+                Check in
+                <p>Add dates</p>
+              </button>
+              <button class="col-6 border bg-white" type="submit">
+                Check out
+                <p>Add dates</p>
+              </button>
+            </div>
+            <input class="ms-3 bg-white" type="checkbox" name="" id="" />
+            <label for="">Compare with Booking.com</label> <br />
+            <button style="height: 60%;" class="button ms-3 search rounded" type="submit">
+              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+              Search
+            </button>
+            <div class="mt-5"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="headline">
+      <div class="mt-5">
+      <div id="headline" class="mt-5 text-center grid-wrapper  css-fpkj3m" style="
+            height: 22vh;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: space-around;
+          ">
+        <h2 class="text-center font-m" style="display: flex; flex-direction: column; /* height: 30vh; */">
+          The best rentals from the top sites, all in one place
+        </h2>
+        <p class=" mx-auto mb-0  lg:ml-0 sm:text-m" style="width: 54vw; /* height: 75vh; */">
+          We believe finding a vacation rental should be easy, and not take
+          hours of searching and scrolling. That’s why we use machine learning
+          to find you the perfect vacation rental. We’ve designed
+          VacationRenter from the ground up for the next generation of
+          travelers.
+        </p>
+      </div>
+      <section class="images container" style="
+            height: 75vh;
+            margin: 5em 0em 1em 4em;
+            display: flex;
+            flex-direction: column;
+          ">
+        <div class="prop">
+          <h3>Trending properties</h3>
+          <button class="rounded bg-white border">See all results</button>
+        </div>
+        <div class="row" style="
+              height: 0vh;
+              display: flex;
+              align-items: stretch;
+              justify-content: space-evenly;
+            ">
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/2.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Country Inn &amp; Suites by Radisson, Bozeman, MT</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/3.jpg" alt="" style="height: 30vh" />
+            <p>Entire House</p>
+            <h4>Beautiful Beach Front Home</h4>
+            <p>14 guests . 6 bedrooms . 4 baths.Vrbo</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/4.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Hyatt Place Boise/Downtown</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+              ">
+            <img src="./images/5.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>The Venetian Resort Las Vegas</h4>
+            <p>5-Star Hotel.Expedia</p>
+          </div>
+        </div>
+      </section>
+    </div>
+      <!--//////////////////////////////////////////////////////-->
+
+      <div id="headline" class="text-center grid-wrapper  css-fpkj3m" style="
+            height: 22vh;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: space-around;
+          ">
+        <h2 class="text-center font-m" style="display: flex; flex-direction: column; /* height: 30vh; */">
+          The best rentals from the top sites, all in one place
+        </h2>
+        <p class=" mx-auto mb-0  lg:ml-0 sm:text-m" style="width: 54vw; /* height: 75vh; */">
+          We believe finding a vacation rental should be easy, and not take
+          hours of searching and scrolling. That’s why we use machine learning
+          to find you the perfect vacation rental. We’ve designed
+          VacationRenter from the ground up for the next generation of
+          travelers.
+        </p>
+      </div>
+      <section class="images container" style="
+            height: 75vh;
+            margin: 5em 0em 1em 4em;
+            display: flex;
+            flex-direction: column;
+          ">
+        <div class="prop">
+          <h3>Trending properties</h3>
+          <button class="rounded bg-white border">See all results</button>
+        </div>
+        <div class="row" style="
+              height: 0vh;
+              display: flex;
+              align-items: stretch;
+              justify-content: space-evenly;
+            ">
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/6.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Country Inn &amp; Suites by Radisson, Bozeman, MT</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/7.jpg" alt="" style="height: 30vh" />
+            <p>Entire House</p>
+            <h4>Beautiful Beach Front Home</h4>
+            <p>14 guests . 6 bedrooms . 4 baths.Vrbo</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/8.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Hyatt Place Boise/Downtown</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+              ">
+            <img src="./images/9.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>The Venetian Resort Las Vegas</h4>
+            <p>5-Star Hotel.Expedia</p>
+          </div>
+        </div>
+      </section>
+      <!--/////////////////////////////////////////////////////////-->
+      <div id="headline" class="text-center grid-wrapper  css-fpkj3m" style="
+      height: 22vh;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      justify-content: space-around;
+    ">
+        <h2 class="text-center font-m" style="display: flex; flex-direction: column; /* height: 30vh; */">
+          The best rentals from the top sites, all in one place
+        </h2>
+        <p class=" mx-auto mb-0  lg:ml-0 sm:text-m" style="width: 54vw; /* height: 75vh; */">
+          We believe finding a vacation rental should be easy, and not take
+          hours of searching and scrolling. That’s why we use machine learning
+          to find you the perfect vacation rental. We’ve designed
+          VacationRenter from the ground up for the next generation of
+          travelers.
+        </p>
+      </div>
+      <section class="images container" style="
+      height: 75vh;
+      margin: 5em 0em 1em 4em;
+      display: flex;
+      flex-direction: column;
+    ">
+        <div class="prop">
+          <h3>Trending properties</h3>
+          <button class="rounded bg-white border">See all results</button>
+        </div>
+        <div class="row" style="
+        height: 0vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+      ">
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/10.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Country Inn &amp; Suites by Radisson, Bozeman, MT</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/11.jpg" alt="" style="height: 30vh" />
+            <p>Entire House</p>
+            <h4>Beautiful Beach Front Home</h4>
+            <p>14 guests . 6 bedrooms . 4 baths.Vrbo</p>
+          </div>
+          <div class="col-3" style="display: flex; flex-direction: column">
+            <img src="./images/12.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>Hyatt Place Boise/Downtown</h4>
+            <p>3-Star Hotel . Booking.com</p>
+          </div>
+          <div class="col-3" style="
+          display: flex;
+          flex-direction: column;
+          align-content: stretch;
+        ">
+            <img src="./images/13.jpg" alt="" style="height: 30vh" />
+            <p>Hotel</p>
+            <h4>The Venetian Resort Las Vegas</h4>
+            <p>5-Star Hotel.Expedia</p>
+          </div>
+        </div>
+      </section>
+      <!--/////////////////////////////////////////////////////////-->
+      <div style="width: 100%;"
+        class="d-flex justify-content-center ps-5 m-auto advantages-block overflow-hidden lg:overflow-auto lg:mx-auto">
+        <div class="wrapper">
+          <ul style="list-style:none;" class="center ps-5 ms-5 overflow-hidden text-center row-wrap row">
+            <li
+              class="ms-5 text-align-right advantage col-3 row-wrap text-center lg:pt-0  lg:pt-0 border-[#f1f1f1] border-0 border-solid lg:border-b"
+              data-cy="advantage">
+              <div id="left" class="lg:flex-grow-0 lg:flex-shrink-0 lg:w-full">
+                <span class="isvg flex justify-center mx-0 mt-0 text-center w-full"><svg
+                    role="presentation" width="97" height="90" viewBox="0 0 97 90" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="Canvas" transform="translate(-34862 -4769)">
+                      <g id="Search">
+                        <g>
+                          <use xlink:href="#result0_stroke" transform="translate(34863.1 4770)"></use>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#result1_stroke" transform="translate(34933.7 4776.7)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#result2_stroke" transform="translate(34944.2 4787.3)"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#result3_stroke" transform="translate(34863 4809.3)"></use>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#result4_stroke" transform="translate(34891.6 4809.3)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#result5_stroke" transform="translate(34891.6 4816.1)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#result6_stroke" transform="translate(34891.6 4823.7)"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#result7_stroke" transform="translate(34863 4837.7)"></use>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#result8_stroke" transform="translate(34891.6 4837.7)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#result9_stroke" transform="translate(34891.6 4844.5)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#result10_stroke" transform="translate(34891.6 4852.2)"></use>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <defs>
+                      <path id="result0_stroke"
+                        d="M 3 0.75L 91.9 0.75L 91.9 -0.75L 3 -0.75L 3 0.75ZM 91.9 0.75C 93.1858 0.75 94.15 1.71421 94.15 3L 95.65 3C 95.65 0.885786 94.0142 -0.75 91.9 -0.75L 91.9 0.75ZM 94.15 3L 94.15 26.5L 95.65 26.5L 95.65 3L 94.15 3ZM 94.15 26.5C 94.15 27.7858 93.1858 28.75 91.9 28.75L 91.9 30.25C 94.0142 30.25 95.65 28.6142 95.65 26.5L 94.15 26.5ZM 91.9 28.75L 3 28.75L 3 30.25L 91.9 30.25L 91.9 28.75ZM 3 28.75C 1.71421 28.75 0.75 27.7858 0.75 26.5L -0.75 26.5C -0.75 28.6142 0.885786 30.25 3 30.25L 3 28.75ZM 0.75 26.5L 0.75 3L -0.75 3L -0.75 26.5L 0.75 26.5ZM 0.75 3C 0.75 1.79787 1.73037 0.75 3 0.75L 3 -0.75C 0.869626 -0.75 -0.75 1.00213 -0.75 3L 0.75 3Z">
+                      </path>
+                      <path id="result1_stroke"
+                        d="M 11.65 6.2C 11.65 9.20995 9.20995 11.65 6.2 11.65L 6.2 13.15C 10.0384 13.15 13.15 10.0384 13.15 6.2L 11.65 6.2ZM 6.2 11.65C 3.19005 11.65 0.75 9.20995 0.75 6.2L -0.75 6.2C -0.75 10.0384 2.36162 13.15 6.2 13.15L 6.2 11.65ZM 0.75 6.2C 0.75 3.19005 3.19005 0.75 6.2 0.75L 6.2 -0.75C 2.36162 -0.75 -0.75 2.36162 -0.75 6.2L 0.75 6.2ZM 6.2 0.75C 9.20995 0.75 11.65 3.19005 11.65 6.2L 13.15 6.2C 13.15 2.36162 10.0384 -0.75 6.2 -0.75L 6.2 0.75Z">
+                      </path>
+                      <path id="result2_stroke"
+                        d="M 6.03033 4.96967L 0.53033 -0.53033L -0.53033 0.53033L 4.96967 6.03033L 6.03033 4.96967Z">
+                      </path>
+                      <path id="result3_stroke"
+                        d="M 1.19209e-08 -1.52588e-06L 1.19209e-08 -0.750002L -0.75 -0.750002L -0.75 -1.52588e-06L 1.19209e-08 -1.52588e-06ZM 19.6 -1.52588e-06L 20.35 -1.52588e-06L 20.35 -0.750002L 19.6 -0.750002L 19.6 -1.52588e-06ZM 19.6 19.6L 19.6 20.35L 20.35 20.35L 20.35 19.6L 19.6 19.6ZM 1.19209e-08 19.6L -0.75 19.6L -0.75 20.35L 1.19209e-08 20.35L 1.19209e-08 19.6ZM 1.19209e-08 0.749998L 19.6 0.749998L 19.6 -0.750002L 1.19209e-08 -0.750002L 1.19209e-08 0.749998ZM 18.85 -1.52588e-06L 18.85 19.6L 20.35 19.6L 20.35 -1.52588e-06L 18.85 -1.52588e-06ZM 19.6 18.85L 1.19209e-08 18.85L 1.19209e-08 20.35L 19.6 20.35L 19.6 18.85ZM 0.75 19.6L 0.75 -1.52588e-06L -0.75 -1.52588e-06L -0.75 19.6L 0.75 19.6Z">
+                      </path>
+                      <path id="result4_stroke"
+                        d="M -3.8147e-07 0.749998L 65.8 0.749998L 65.8 -0.750002L -3.8147e-07 -0.750002L -3.8147e-07 0.749998Z">
+                      </path>
+                      <path id="result5_stroke"
+                        d="M -3.8147e-07 0.750002L 38.3 0.750002L 38.3 -0.749998L -3.8147e-07 -0.749998L -3.8147e-07 0.750002Z">
+                      </path>
+                      <path id="result6_stroke"
+                        d="M -3.8147e-07 0.75L 20.3 0.75L 20.3 -0.75L -3.8147e-07 -0.75L -3.8147e-07 0.75Z"></path>
+                      <path id="result7_stroke"
+                        d="M 1.19209e-08 0L 1.19209e-08 -0.75L -0.75 -0.75L -0.75 0L 1.19209e-08 0ZM 19.6 0L 20.35 0L 20.35 -0.75L 19.6 -0.75L 19.6 0ZM 19.6 19.6L 19.6 20.35L 20.35 20.35L 20.35 19.6L 19.6 19.6ZM 1.19209e-08 19.6L -0.75 19.6L -0.75 20.35L 1.19209e-08 20.35L 1.19209e-08 19.6ZM 1.19209e-08 0.75L 19.6 0.75L 19.6 -0.75L 1.19209e-08 -0.75L 1.19209e-08 0.75ZM 18.85 0L 18.85 19.6L 20.35 19.6L 20.35 0L 18.85 0ZM 19.6 18.85L 1.19209e-08 18.85L 1.19209e-08 20.35L 19.6 20.35L 19.6 18.85ZM 0.75 19.6L 0.75 0L -0.75 0L -0.75 19.6L 0.75 19.6Z">
+                      </path>
+                      <path id="result8_stroke"
+                        d="M -3.8147e-07 0.75L 65.8 0.75L 65.8 -0.75L -3.8147e-07 -0.75L -3.8147e-07 0.75Z"></path>
+                      <path id="result9_stroke"
+                        d="M -3.8147e-07 0.750003L 38.3 0.750003L 38.3 -0.749997L -3.8147e-07 -0.749997L -3.8147e-07 0.750003Z">
+                      </path>
+                      <path id="result10_stroke"
+                        d="M -3.8147e-07 0.75L 20.3 0.75L 20.3 -0.75L -3.8147e-07 -0.75L -3.8147e-07 0.75Z"></path>
+                    </defs>
+                  </svg></span>
+                <div class="a-txt text-center flex-grow-0 flex-shrink-0 w-full mb-0 mx-auto">
+                  <div class="text-black font-m title" data-cy="advantage-title" role="heading" aria-level="3">
+                    Instant search
+                  </div>
+                  <div class="content text-darkgrey mb-0 mx-auto"
+                    data-cy="advantage-content">
+                    No wasted time searching and scrolling across different
+                    sites
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="ms-5 text-center advantage col-3 row-wrap text-center flex-grow-0 flex-shrink-0 min-w-[33%] border-[#f1f1f1] border-0 border-l border-r border-solid lg:border-r-0 lg:border-l-0 lg:border-b"
+              data-cy="advantage">
+              <div id="center">
+                <span class="isvg flex justify-center mx-0 mt-0  text-center w-full"><svg
+                    role="presentation" width="87" height="87" viewBox="0 0 87 87" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-35301 -4770)">
+                      <g>
+                        <g>
+                          <g>
+                            <use xlink:href="#easysearchpath0_stroke" transform="translate(35324.7 4793.72)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#easysearchpath1_stroke" transform="translate(35313.1 4782.15)"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#easysearchpath2_stroke" transform="translate(35302 4771)"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#easysearchpath3_stroke" transform="translate(35336.3 4804.23)"></use>
+                        </g>
+                      </g>
+                    </g>
+                    <defs>
+                      <path id="easysearchpath0_stroke"
+                        d="M 38.6949 19.7225C 38.6949 30.1368 30.2387 38.6949 19.7225 38.6949L 19.7225 40.1949C 31.0724 40.1949 40.1949 30.9599 40.1949 19.7225L 38.6949 19.7225ZM 19.7225 38.6949C 9.20358 38.6949 0.75 30.2414 0.75 19.7225L -0.75 19.7225C -0.75 31.0698 8.37515 40.1949 19.7225 40.1949L 19.7225 38.6949ZM 0.75 19.7225C 0.75 9.20358 9.20358 0.75 19.7225 0.75L 19.7225 -0.75C 8.37515 -0.75 -0.75 8.37515 -0.75 19.7225L 0.75 19.7225Z">
+                      </path>
+                      <path id="easysearchpath1_stroke"
+                        d="M 31.2987 0.75C 48.1416 0.75 61.8474 14.4558 61.8474 31.2987L 63.3474 31.2987C 63.3474 13.6273 48.9701 -0.75 31.2987 -0.75L 31.2987 0.75ZM 61.8474 31.2987C 61.8474 48.1416 48.1416 61.8474 31.2987 61.8474L 31.2987 63.3474C 48.9701 63.3474 63.3474 48.9701 63.3474 31.2987L 61.8474 31.2987ZM 31.2987 61.8474C 14.4558 61.8474 0.75 48.1416 0.75 31.2987L -0.75 31.2987C -0.75 48.9701 13.6273 63.3474 31.2987 63.3474L 31.2987 61.8474Z">
+                      </path>
+                      <path id="easysearchpath2_stroke"
+                        d="M 42.5499 84.2495C 19.4922 84.3548 0.75 65.7198 0.75 42.5534L -0.75 42.5534C -0.75 66.5494 18.6665 85.8586 42.5568 85.7495L 42.5499 84.2495ZM 0.75 42.5534C 0.75 19.3827 19.2829 0.75 42.339 0.75L 42.339 -0.75C 18.4471 -0.75 -0.75 18.5617 -0.75 42.5534L 0.75 42.5534ZM 42.339 0.75C 65.4031 0.75 84.1442 19.2842 84.2495 42.3424L 85.7495 42.3356C 85.6404 18.4457 66.223 -0.75 42.339 -0.75L 42.339 0.75Z">
+                      </path>
+                      <path id="easysearchpath3_stroke"
+                        d="M 13.3187 13.3062L 13.843 13.8426L 13.849 13.8365L 13.3187 13.3062ZM 8.60258 17.9152L 8.07834 17.3788L 8.07225 17.3849L 8.60258 17.9152ZM 7.1018 17.9152L 7.63217 17.3849L 7.62601 17.3788L 7.1018 17.9152ZM 2.38566 13.3062L 2.90988 12.7698L 2.90661 12.7666L 2.38566 13.3062ZM 13.6403 2.48023L 14.1802 1.95962L 14.1796 1.95896L 13.6403 2.48023ZM 12.7945 12.7698L 8.07838 17.3788L 9.12679 18.4516L 13.8429 13.8426L 12.7945 12.7698ZM 8.07225 17.3849C 7.93639 17.5208 7.76799 17.5208 7.63213 17.3849L 6.57147 18.4456C 7.29311 19.1672 8.41127 19.1672 9.13291 18.4456L 8.07225 17.3849ZM 7.62601 17.3788L 2.90987 12.7698L 1.86146 13.8426L 6.5776 18.4516L 7.62601 17.3788ZM 2.90661 12.7666C 0.0950671 10.052 0.00149626 5.60337 2.8087 2.79617L 1.74804 1.73551C -1.66162 5.14517 -1.54061 10.5578 1.86472 13.8457L 2.90661 12.7666ZM 2.8087 2.79617C 5.60968 -0.00481453 10.273 0.0759158 13.1011 3.00149L 14.1796 1.95896C 10.7908 -1.5467 5.16392 -1.68037 1.74804 1.73551L 2.8087 2.79617ZM 13.1004 3.00083C 15.6865 5.68268 15.5257 10.0385 12.7884 12.7759L 13.849 13.8365C 17.1142 10.5714 17.3823 5.28026 14.1802 1.95962L 13.1004 3.00083Z">
+                      </path>
+                    </defs>
+                  </svg></span>
+                <div class="a-txt text-center flex-grow-0 flex-shrink-0 w-full mb-0 mx-auto">
+                  <div class="text-black font-m title" data-cy="advantage-title" role="heading" aria-level="3">
+                    Personalized results
+                  </div>
+                  <div class="content text-darkgrey mb-0 mx-auto"
+                    data-cy="advantage-content">
+                    Only the best results so you can easily find the perfect
+                    rental
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="ms-5 col-3 row-wrap text-center  border-[#f1f1f1] border-0 border-solid"
+              data-cy="advantage">
+              <div id="right" class="lg:flex-grow-0 lg:flex-shrink-0 lg:w-full">
+                <span class="isvg flex justify-center mx-0 mt-0 text-center w-full"><svg
+                    role="presentation" width="120" height="122" viewBox="0 0 120 122" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-35730 -4754)">
+                      <g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath0_stroke" transform="translate(35760.2 4754)" fill="#1F191A">
+                            </use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath1_stroke" transform="translate(35731 4760.37)" fill="#1F191A">
+                            </use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath2_stroke" transform="translate(35818.8 4790.36)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath3_stroke" transform="translate(35752.1 4790.36)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath4_stroke" transform="translate(35746.7 4784.68)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath5_stroke" transform="translate(35774.2 4852.54)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath6_stroke" transform="translate(35812.2 4856.82)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath7_stroke" transform="translate(35777.1 4855.89)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath8_stroke" transform="translate(35785.5 4856.59)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath9_stroke" transform="translate(35789 4825.9)" fill="#1F191A">
+                            </use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath10_stroke" transform="translate(35789 4798.35)" fill="#1F191A">
+                            </use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath11_stroke" transform="translate(35799.2 4798.35)"
+                              fill="#1F191A"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath12_stroke" transform="translate(35799.2 4825.9)" fill="#1F191A">
+                            </use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath13_stroke" transform="translate(35737.7 4768.71)"
+                              fill="#1F191A"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath14_stroke" transform="translate(35751.2 4768.71)"
+                              fill="#1F191A"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <g>
+                              <use xlink:href="#rentalpath15_stroke" transform="translate(35771.8 4775.54)"
+                                fill="#1F191A"></use>
+                            </g>
+                          </g>
+                          <g>
+                            <g>
+                              <use xlink:href="#rentalpath16_stroke" transform="translate(35785.4 4775.54)"
+                                fill="#1F191A"></use>
+                            </g>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath17_stroke" transform="translate(35737.7 4795.34)"
+                              fill="#1F191A"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath17_stroke" transform="translate(35737.7 4821.97)"
+                              fill="#1F191A"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath18_stroke" transform="translate(35737.7 4848.6)" fill="#1F191A">
+                            </use>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath19_stroke" transform="translate(35760.4 4825.9)" fill="#1F191A">
+                            </use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath20_stroke" transform="translate(35760.4 4798.35)"
+                              fill="#1F191A"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath21_stroke" transform="translate(35770.7 4798.35)"
+                              fill="#1F191A"></use>
+                          </g>
+                          <g>
+                            <use xlink:href="#rentalpath22_stroke" transform="translate(35770.7 4825.9)" fill="#1F191A">
+                            </use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath23_stroke" transform="translate(35791.4 4763.5)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath24_stroke" transform="translate(35764.8 4769.63)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <g>
+                            <use xlink:href="#rentalpath25_stroke" transform="translate(35807.4 4843.04)"
+                              fill="#1F191A"></use>
+                          </g>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath26_stroke" transform="translate(35813.8 4860.29)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath27_stroke" transform="translate(35826.9 4844.89)" fill="#1F191A">
+                          </use>
+                        </g>
+                        <g>
+                          <use xlink:href="#rentalpath28_stroke" transform="translate(35801.7 4826.37)" fill="#1F191A">
+                          </use>
+                        </g>
+                      </g>
+                    </g>
+                    <defs>
+                      <path id="rentalpath0_stroke" d="M 0.75 6.48421L 0.75 0L -0.75 0L -0.75 6.48421L 0.75 6.48421Z">
+                      </path>
+                      <path id="rentalpath1_stroke"
+                        d="M 1.37639e-08 114.516L -0.75 114.516L -0.75 115.266L 1.37639e-08 115.266L 1.37639e-08 114.516ZM 1.37639e-08 0L 1.37639e-08 -0.75L -0.75 -0.75L -0.75 0L 1.37639e-08 0ZM 33.8297 0L 34.5797 0L 34.5797 -0.75L 33.8297 -0.75L 33.8297 0ZM 21.2446 113.766L 1.37639e-08 113.766L 1.37639e-08 115.266L 21.2446 115.266L 21.2446 113.766ZM 0.75 114.516L 0.75 0L -0.75 0L -0.75 114.516L 0.75 114.516ZM 1.37639e-08 0.75L 29.2114 0.75L 29.2114 -0.75L 1.37639e-08 -0.75L 1.37639e-08 0.75ZM 29.2114 0.75L 33.8297 0.75L 33.8297 -0.75L 29.2114 -0.75L 29.2114 0.75ZM 33.0797 0L 33.0797 24.3158L 34.5797 24.3158L 34.5797 0L 33.0797 0Z">
+                      </path>
+                      <path id="rentalpath2_stroke"
+                        d="M 0.750003 42.2632L 0.750003 -4.41702e-07L -0.749997 -4.41702e-07L -0.749997 42.2632L 0.750003 42.2632Z">
+                      </path>
+                      <path id="rentalpath3_stroke"
+                        d="M 4.40444e-07 84.5263L -0.75 84.5263L -0.75 85.2763L 4.40444e-07 85.2763L 4.40444e-07 84.5263ZM 66.6204 83.7763L 61.6556 83.7763L 61.6556 85.2763L 66.6204 85.2763L 66.6204 83.7763ZM 61.6556 83.7763L 55.3053 83.7763L 55.3053 85.2763L 61.6556 85.2763L 61.6556 83.7763ZM 55.3053 83.7763L 4.40444e-07 83.7763L 4.40444e-07 85.2763L 55.3053 85.2763L 55.3053 83.7763ZM 0.75 84.5263L 0.75 -4.41702e-07L -0.75 -4.41702e-07L -0.75 84.5263L 0.75 84.5263Z">
+                      </path>
+                      <path id="rentalpath4_stroke"
+                        d="M -4.40445e-07 0L -4.40445e-07 -0.75L -0.75 -0.75L -0.75 0L -4.40445e-07 0ZM 77.589 0L 78.339 0L 78.339 -0.75L 77.589 -0.75L 77.589 0ZM 77.589 5.67368L 77.589 6.42368L 78.339 6.42368L 78.339 5.67368L 77.589 5.67368ZM -4.40445e-07 5.67368L -0.75 5.67368L -0.75 6.42368L -4.40445e-07 6.42368L -4.40445e-07 5.67368ZM -4.40445e-07 0.75L 77.589 0.75L 77.589 -0.75L -4.40445e-07 -0.75L -4.40445e-07 0.75ZM 76.839 0L 76.839 5.67368L 78.339 5.67368L 78.339 0L 76.839 0ZM 77.589 4.92368L -4.40445e-07 4.92368L -4.40445e-07 6.42368L 77.589 6.42368L 77.589 4.92368ZM 0.75 5.67368L 0.75 0L -0.75 0L -0.75 5.67368L 0.75 5.67368Z">
+                      </path>
+                      <path id="rentalpath5_stroke"
+                        d="M 8.80889e-07 -1.76681e-06L 8.80889e-07 -0.750002L -0.749999 -0.750002L -0.749999 -1.76681e-06L 8.80889e-07 -1.76681e-06ZM 22.6301 -1.76681e-06L 23.3801 -1.76681e-06L 23.3801 -0.750002L 22.6301 -0.750002L 22.6301 -1.76681e-06ZM 22.6301 3.35789L 22.6301 4.10789L 23.3801 4.10789L 23.3801 3.35789L 22.6301 3.35789ZM 8.80889e-07 3.35789L -0.749999 3.35789L -0.749999 4.10789L 8.80889e-07 4.10789L 8.80889e-07 3.35789ZM 8.80889e-07 0.749998L 22.6301 0.749998L 22.6301 -0.750002L 8.80889e-07 -0.750002L 8.80889e-07 0.749998ZM 21.8801 -1.76681e-06L 21.8801 3.35789L 23.3801 3.35789L 23.3801 -1.76681e-06L 21.8801 -1.76681e-06ZM 22.6301 2.60789L 8.80889e-07 2.60789L 8.80889e-07 4.10789L 22.6301 4.10789L 22.6301 2.60789ZM 0.750001 3.35789L 0.750001 -1.76681e-06L -0.749999 -1.76681e-06L -0.749999 3.35789L 0.750001 3.35789Z">
+                      </path>
+                      <path id="rentalpath6_stroke"
+                        d="M -1.76178e-06 3.53361e-06L -1.76178e-06 -0.749996L -0.750002 -0.749996L -0.750002 3.53361e-06L -1.76178e-06 3.53361e-06ZM 12.2387 3.53361e-06L 12.9887 3.53361e-06L 12.9887 -0.749996L 12.2387 -0.749996L 12.2387 3.53361e-06ZM 12.2387 3.35789L 12.2387 4.10789L 12.9887 4.10789L 12.9887 3.35789L 12.2387 3.35789ZM -1.76178e-06 3.35789L -0.750002 3.35789L -0.750002 4.10789L -1.76178e-06 4.10789L -1.76178e-06 3.35789ZM -1.76178e-06 0.750004L 12.2387 0.750004L 12.2387 -0.749996L -1.76178e-06 -0.749996L -1.76178e-06 0.750004ZM 11.4887 3.53361e-06L 11.4887 3.35789L 12.9887 3.35789L 12.9887 3.53361e-06L 11.4887 3.53361e-06ZM 12.2387 2.60789L -1.76178e-06 2.60789L -1.76178e-06 4.10789L 12.2387 4.10789L 12.2387 2.60789ZM 0.749998 3.35789L 0.749998 3.53361e-06L -0.750002 3.53361e-06L -0.750002 3.35789L 0.749998 3.35789Z">
+                      </path>
+                      <path id="rentalpath7_stroke"
+                        d="M 16.7417 18.8737L 16.7417 19.6237L 17.4917 19.6237L 17.4917 18.8737L 16.7417 18.8737ZM 8.80889e-07 18.8737L -0.749999 18.8737L -0.749999 19.6237L 8.80889e-07 19.6237L 8.80889e-07 18.8737ZM 15.9917 0L 15.9917 18.8737L 17.4917 18.8737L 17.4917 0L 15.9917 0ZM 16.7417 18.1237L 8.80889e-07 18.1237L 8.80889e-07 19.6237L 16.7417 19.6237L 16.7417 18.1237ZM 0.750001 18.8737L 0.750001 0L -0.749999 0L -0.749999 18.8737L 0.750001 18.8737Z">
+                      </path>
+                      <path id="rentalpath8_stroke"
+                        d="M 0.75 18.179L 0.75 -1.76681e-06L -0.75 -1.76681e-06L -0.75 18.179L 0.75 18.179Z"></path>
+                      <path id="rentalpath9_stroke"
+                        d="M 20.5519 -1.76681e-06L 21.3019 -1.76681e-06L 21.3019 -0.750002L 20.5519 -0.750002L 20.5519 -1.76681e-06ZM 0 -1.76681e-06L 0 -0.750002L -0.75 -0.750002L -0.75 -1.76681e-06L 0 -1.76681e-06ZM 0 18.2947L -0.75 18.2947L -0.75 19.0447L 0 19.0447L 0 18.2947ZM 21.3019 15.4L 21.3019 -1.76681e-06L 19.8019 -1.76681e-06L 19.8019 15.4L 21.3019 15.4ZM 20.5519 -0.750002L 10.2759 -0.750002L 10.2759 0.749998L 20.5519 0.749998L 20.5519 -0.750002ZM 10.2759 -0.750002L 0 -0.750002L 0 0.749998L 10.2759 0.749998L 10.2759 -0.750002ZM -0.75 -1.76681e-06L -0.75 18.2947L 0.75 18.2947L 0.75 -1.76681e-06L -0.75 -1.76681e-06ZM 0 19.0447L 10.2759 19.0447L 10.2759 17.5447L 0 17.5447L 0 19.0447ZM 10.2759 19.0447L 17.5499 19.0447L 17.5499 17.5447L 10.2759 17.5447L 10.2759 19.0447ZM 17.5499 19.0447L 18.4736 19.0447L 18.4736 17.5447L 17.5499 17.5447L 17.5499 19.0447Z">
+                      </path>
+                      <path id="rentalpath10_stroke"
+                        d="M 0 -8.83404e-07L 0 -0.750001L -0.75 -0.750001L -0.75 -8.83404e-07L 0 -8.83404e-07ZM 20.6673 -8.83404e-07L 21.4173 -8.83404e-07L 21.4173 -0.750001L 20.6673 -0.750001L 20.6673 -8.83404e-07ZM 20.6673 18.4105L 20.6673 19.1605L 21.4173 19.1605L 21.4173 18.4105L 20.6673 18.4105ZM 0 18.4105L -0.75 18.4105L -0.75 19.1605L 0 19.1605L 0 18.4105ZM 0 0.749999L 20.6673 0.749999L 20.6673 -0.750001L 0 -0.750001L 0 0.749999ZM 19.9173 -8.83404e-07L 19.9173 18.4105L 21.4173 18.4105L 21.4173 -8.83404e-07L 19.9173 -8.83404e-07ZM 20.6673 17.6605L 0 17.6605L 0 19.1605L 20.6673 19.1605L 20.6673 17.6605ZM 0.75 18.4105L 0.75 -8.83404e-07L -0.75 -8.83404e-07L -0.75 18.4105L 0.75 18.4105Z">
+                      </path>
+                      <path id="rentalpath11_stroke"
+                        d="M 0.750002 18.4105L 0.750002 -8.83404e-07L -0.749998 -8.83404e-07L -0.749998 18.4105L 0.750002 18.4105Z">
+                      </path>
+                      <path id="rentalpath12_stroke"
+                        d="M 0.750002 18.2947L 0.750002 -1.76681e-06L -0.749998 -1.76681e-06L -0.749998 18.2947L 0.750002 18.2947Z">
+                      </path>
+                      <path id="rentalpath13_stroke"
+                        d="M -1.10111e-07 -2.20851e-07L -1.10111e-07 -0.75L -0.75 -0.75L -0.75 -2.20851e-07L -1.10111e-07 -2.20851e-07ZM 6.81213 -2.20851e-07L 7.56213 -2.20851e-07L 7.56213 -0.75L 6.81213 -0.75L 6.81213 -2.20851e-07ZM 6.81213 16.0947L 6.81213 16.8447L 7.56213 16.8447L 7.56213 16.0947L 6.81213 16.0947ZM -1.10111e-07 16.0947L -0.75 16.0947L -0.75 16.8447L -1.10111e-07 16.8447L -1.10111e-07 16.0947ZM -1.10111e-07 0.75L 6.81213 0.75L 6.81213 -0.75L -1.10111e-07 -0.75L -1.10111e-07 0.75ZM 6.06213 -2.20851e-07L 6.06213 16.0947L 7.56213 16.0947L 7.56213 -2.20851e-07L 6.06213 -2.20851e-07ZM 6.81213 15.3447L -1.10111e-07 15.3447L -1.10111e-07 16.8447L 6.81213 16.8447L 6.81213 15.3447ZM 0.75 16.0947L 0.75 -2.20851e-07L -0.75 -2.20851e-07L -0.75 16.0947L 0.75 16.0947Z">
+                      </path>
+                      <path id="rentalpath14_stroke"
+                        d="M 6.92759 15.9789L 6.92759 16.7289L 7.67759 16.7289L 7.67759 15.9789L 6.92759 15.9789ZM 6.92759 -2.20851e-07L 7.67759 -2.20851e-07L 7.67759 -0.75L 6.92759 -0.75L 6.92759 -2.20851e-07ZM -8.80889e-07 -2.20851e-07L -8.80889e-07 -0.75L -0.750001 -0.75L -0.750001 -2.20851e-07L -8.80889e-07 -2.20851e-07ZM -8.80889e-07 15.9789L -0.750001 15.9789L -0.750001 16.7289L -8.80889e-07 16.7289L -8.80889e-07 15.9789ZM 7.67759 15.9789L 7.67759 -2.20851e-07L 6.17759 -2.20851e-07L 6.17759 15.9789L 7.67759 15.9789ZM 6.92759 -0.75L -8.80889e-07 -0.75L -8.80889e-07 0.75L 6.92759 0.75L 6.92759 -0.75ZM -0.750001 -2.20851e-07L -0.750001 15.9789L 0.749999 15.9789L 0.749999 -2.20851e-07L -0.750001 -2.20851e-07ZM -8.80889e-07 16.7289L 6.92759 16.7289L 6.92759 15.2289L -8.80889e-07 15.2289L -8.80889e-07 16.7289Z">
+                      </path>
+                      <path id="rentalpath15_stroke"
+                        d="M -1.76178e-06 4.41702e-07L -1.76178e-06 -0.75L -0.750002 -0.75L -0.750002 4.41702e-07L -1.76178e-06 4.41702e-07ZM 6.92759 4.41702e-07L 7.67759 4.41702e-07L 7.67759 -0.75L 6.92759 -0.75L 6.92759 4.41702e-07ZM 0.749998 9.14737L 0.749998 4.41702e-07L -0.750002 4.41702e-07L -0.750002 9.14737L 0.749998 9.14737ZM -1.76178e-06 0.75L 6.92759 0.75L 6.92759 -0.75L -1.76178e-06 -0.75L -1.76178e-06 0.75ZM 6.17759 4.41702e-07L 6.17759 9.14737L 7.67759 9.14737L 7.67759 4.41702e-07L 6.17759 4.41702e-07Z">
+                      </path>
+                      <path id="rentalpath16_stroke"
+                        d="M 1.76178e-06 4.41702e-07L 1.76178e-06 -0.75L -0.749998 -0.75L -0.749998 4.41702e-07L 1.76178e-06 4.41702e-07ZM 6.81213 4.41702e-07L 7.56213 4.41702e-07L 7.56213 -0.75L 6.81213 -0.75L 6.81213 4.41702e-07ZM 0.750002 9.14737L 0.750002 4.41702e-07L -0.749998 4.41702e-07L -0.749998 9.14737L 0.750002 9.14737ZM 1.76178e-06 0.75L 6.81213 0.75L 6.81213 -0.75L 1.76178e-06 -0.75L 1.76178e-06 0.75ZM 6.06213 4.41702e-07L 6.06213 9.14737L 7.56213 9.14737L 7.56213 4.41702e-07L 6.06213 4.41702e-07Z">
+                      </path>
+                      <path id="rentalpath17_stroke"
+                        d="M -1.10111e-07 8.83404e-07L -1.10111e-07 -0.749999L -0.75 -0.749999L -0.75 8.83404e-07L -1.10111e-07 8.83404e-07ZM 6.81213 8.83404e-07L 7.56213 8.83404e-07L 7.56213 -0.749999L 6.81213 -0.749999L 6.81213 8.83404e-07ZM 6.81213 16.0947L 6.81213 16.8447L 7.56213 16.8447L 7.56213 16.0947L 6.81213 16.0947ZM -1.10111e-07 16.0947L -0.75 16.0947L -0.75 16.8447L -1.10111e-07 16.8447L -1.10111e-07 16.0947ZM -1.10111e-07 0.750001L 6.81213 0.750001L 6.81213 -0.749999L -1.10111e-07 -0.749999L -1.10111e-07 0.750001ZM 6.06213 8.83404e-07L 6.06213 16.0947L 7.56213 16.0947L 7.56213 8.83404e-07L 6.06213 8.83404e-07ZM 6.81213 15.3447L -1.10111e-07 15.3447L -1.10111e-07 16.8447L 6.81213 16.8447L 6.81213 15.3447ZM 0.75 16.0947L 0.75 8.83404e-07L -0.75 8.83404e-07L -0.75 16.0947L 0.75 16.0947Z">
+                      </path>
+                      <path id="rentalpath18_stroke"
+                        d="M -1.10111e-07 -3.53361e-06L -1.10111e-07 -0.750004L -0.75 -0.750004L -0.75 -3.53361e-06L -1.10111e-07 -3.53361e-06ZM 6.81213 -3.53361e-06L 7.56213 -3.53361e-06L 7.56213 -0.750004L 6.81213 -0.750004L 6.81213 -3.53361e-06ZM 6.81213 16.0947L 6.81213 16.8447L 7.56213 16.8447L 7.56213 16.0947L 6.81213 16.0947ZM -1.10111e-07 16.0947L -0.75 16.0947L -0.75 16.8447L -1.10111e-07 16.8447L -1.10111e-07 16.0947ZM -1.10111e-07 0.749996L 6.81213 0.749996L 6.81213 -0.750004L -1.10111e-07 -0.750004L -1.10111e-07 0.749996ZM 6.06213 -3.53361e-06L 6.06213 16.0947L 7.56213 16.0947L 7.56213 -3.53361e-06L 6.06213 -3.53361e-06ZM 6.81213 15.3447L -1.10111e-07 15.3447L -1.10111e-07 16.8447L 6.81213 16.8447L 6.81213 15.3447ZM 0.75 16.0947L 0.75 -3.53361e-06L -0.75 -3.53361e-06L -0.75 16.0947L 0.75 16.0947Z">
+                      </path>
+                      <path id="rentalpath19_stroke"
+                        d="M -8.80889e-07 -1.76681e-06L -8.80889e-07 -0.750002L -0.750001 -0.750002L -0.750001 -1.76681e-06L -8.80889e-07 -1.76681e-06ZM 20.6673 -1.76681e-06L 21.4173 -1.76681e-06L 21.4173 -0.750002L 20.6673 -0.750002L 20.6673 -1.76681e-06ZM 20.6673 18.4105L 20.6673 19.1605L 21.4173 19.1605L 21.4173 18.4105L 20.6673 18.4105ZM -8.80889e-07 18.4105L -0.750001 18.4105L -0.750001 19.1605L -8.80889e-07 19.1605L -8.80889e-07 18.4105ZM -8.80889e-07 0.749998L 20.6673 0.749998L 20.6673 -0.750002L -8.80889e-07 -0.750002L -8.80889e-07 0.749998ZM 19.9173 -1.76681e-06L 19.9173 18.4105L 21.4173 18.4105L 21.4173 -1.76681e-06L 19.9173 -1.76681e-06ZM 20.6673 17.6605L -8.80889e-07 17.6605L -8.80889e-07 19.1605L 20.6673 19.1605L 20.6673 17.6605ZM 0.749999 18.4105L 0.749999 -1.76681e-06L -0.750001 -1.76681e-06L -0.750001 18.4105L 0.749999 18.4105Z">
+                      </path>
+                      <path id="rentalpath20_stroke"
+                        d="M -8.80889e-07 -8.83404e-07L -8.80889e-07 -0.750001L -0.750001 -0.750001L -0.750001 -8.83404e-07L -8.80889e-07 -8.83404e-07ZM 20.6673 -8.83404e-07L 21.4173 -8.83404e-07L 21.4173 -0.750001L 20.6673 -0.750001L 20.6673 -8.83404e-07ZM 20.6673 18.4105L 20.6673 19.1605L 21.4173 19.1605L 21.4173 18.4105L 20.6673 18.4105ZM -8.80889e-07 18.4105L -0.750001 18.4105L -0.750001 19.1605L -8.80889e-07 19.1605L -8.80889e-07 18.4105ZM -8.80889e-07 0.749999L 20.6673 0.749999L 20.6673 -0.750001L -8.80889e-07 -0.750001L -8.80889e-07 0.749999ZM 19.9173 -8.83404e-07L 19.9173 18.4105L 21.4173 18.4105L 21.4173 -8.83404e-07L 19.9173 -8.83404e-07ZM 20.6673 17.6605L -8.80889e-07 17.6605L -8.80889e-07 19.1605L 20.6673 19.1605L 20.6673 17.6605ZM 0.749999 18.4105L 0.749999 -8.83404e-07L -0.750001 -8.83404e-07L -0.750001 18.4105L 0.749999 18.4105Z">
+                      </path>
+                      <path id="rentalpath21_stroke"
+                        d="M 0.750001 18.4105L 0.750001 -8.83404e-07L -0.749999 -8.83404e-07L -0.749999 18.4105L 0.750001 18.4105Z">
+                      </path>
+                      <path id="rentalpath22_stroke"
+                        d="M 0.750001 18.2947L 0.750001 -1.76681e-06L -0.749999 -1.76681e-06L -0.749999 18.2947L 0.750001 18.2947Z">
+                      </path>
+                      <path id="rentalpath23_stroke"
+                        d="M 0.749998 6.25263L 0.749998 -2.20851e-07L -0.750002 -2.20851e-07L -0.750002 6.25263L 0.749998 6.25263Z">
+                      </path>
+                      <path id="rentalpath24_stroke"
+                        d="M 34.407 0L 35.157 0L 35.157 -0.75L 34.407 -0.75L 34.407 0ZM 4.40444e-07 0.75L 34.407 0.75L 34.407 -0.75L 4.40444e-07 -0.75L 4.40444e-07 0.75ZM 33.657 0L 33.657 15.0526L 35.157 15.0526L 35.157 0L 33.657 0Z">
+                      </path>
+                      <path id="rentalpath25_stroke"
+                        d="M 35.7926 31.8421L 35.7926 32.5921L 36.5426 32.5921L 36.5426 31.8421L 35.7926 31.8421ZM 0 31.8421L -0.75 31.8421L -0.75 32.5921L 0 32.5921L 0 31.8421ZM 35.0426 1.76681e-06L 35.0426 31.8421L 36.5426 31.8421L 36.5426 1.76681e-06L 35.0426 1.76681e-06ZM 35.7926 31.0921L 0 31.0921L 0 32.5921L 35.7926 32.5921L 35.7926 31.0921ZM 0.75 31.8421L 0.75 1.76681e-06L -0.75 1.76681e-06L -0.75 31.8421L 0.75 31.8421Z">
+                      </path>
+                      <path id="rentalpath26_stroke"
+                        d="M 0 3.53361e-06L 0 -0.749996L -0.75 -0.749996L -0.75 3.53361e-06L 0 3.53361e-06ZM 9.00588 3.53361e-06L 9.75588 3.53361e-06L 9.75588 -0.749996L 9.00588 -0.749996L 9.00588 3.53361e-06ZM 9.00588 14.7053L 9.00588 15.4553L 9.75588 15.4553L 9.75588 14.7053L 9.00588 14.7053ZM 0 14.7053L -0.75 14.7053L -0.75 15.4553L 0 15.4553L 0 14.7053ZM 0 0.750004L 9.00588 0.750004L 9.00588 -0.749996L 0 -0.749996L 0 0.750004ZM 8.25588 3.53361e-06L 8.25588 14.7053L 9.75588 14.7053L 9.75588 3.53361e-06L 8.25588 3.53361e-06ZM 9.00588 13.9553L 0 13.9553L 0 15.4553L 9.00588 15.4553L 9.00588 13.9553ZM 0.75 14.7053L 0.75 3.53361e-06L -0.75 3.53361e-06L -0.75 14.7053L 0.75 14.7053Z">
+                      </path>
+                      <path id="rentalpath27_stroke"
+                        d="M 10.7633 5.78947C 10.7633 8.55674 8.52696 10.7962 5.773 10.7962L 5.773 12.3616C 9.39571 12.3616 12.3287 9.41708 12.3287 5.78947L 10.7633 5.78947ZM 5.773 10.7962C 3.01903 10.7962 0.782702 8.55674 0.782702 5.78947L -0.782698 5.78947C -0.782698 9.41708 2.15028 12.3616 5.773 12.3616L 5.773 10.7962ZM 0.782702 5.78947C 0.782702 3.0222 3.01903 0.7827 5.773 0.7827L 5.773 -0.7827C 2.15028 -0.7827 -0.782698 2.16187 -0.782698 5.78947L 0.782702 5.78947ZM 5.773 0.7827C 8.52696 0.7827 10.7633 3.0222 10.7633 5.78947L 12.3287 5.78947C 12.3287 2.16187 9.39571 -0.7827 5.773 -0.7827L 5.773 0.7827Z">
+                      </path>
+                      <path id="rentalpath28_stroke"
+                        d="M 23.6693 0L 24.1856 -0.54401L 23.6693 -1.03399L 23.153 -0.54401L 23.6693 0ZM 47.8548 21.9191L 24.1856 -0.54401L 23.153 0.54401L 46.8223 23.0072L 47.8548 21.9191ZM 23.153 -0.54401L -0.516288 21.9191L 0.516288 23.0072L 24.1856 0.54401L 23.153 -0.54401Z">
+                      </path>
+                    </defs>
+                  </svg></span>
+                <div class="a-txt text-center flex-grow-0 flex-shrink-0 w-full mb-0 mx-auto">
+                  <div class="text-black font-m title" data-cy="advantage-title" role="heading" aria-level="3">
+                    Millions of rentals
+                  </div>
+                  <div class="content text-darkgrey mb-0 mx-auto"
+                    data-cy="advantage-content">
+                    The best vacation rentals from the world’s largest
+                    travel sites
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Company name
+              </h6>
+              <p>
+                Here you can use travel and search of best places around the world. you can
+                also book a hotel, home or even a plan tecket.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Support
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Traveler Resources</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Travel Trends</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Contact</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">FAQ</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Comapny
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Home</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">About</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">List Your Rental</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Careers</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Assuit, NY 10012, US</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                vacationrenter@example.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +2 010 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> +2 011 234 567 89</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://www.vacationrenter.com/c/Vacation-Rental?gclid=Cj0KCQiAw8OeBhCeARIsAGxWtUyXzMQX0-p-f4vevbCBh1Bcskn6rF2idDdCEJRlvgVe9PEz45lJk9waAuPGEALw_wcB&currency=USD">Vacation-Rental</a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
